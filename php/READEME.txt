@@ -1,0 +1,1 @@
+This folder should only contain files used in the process of learning PHP.
