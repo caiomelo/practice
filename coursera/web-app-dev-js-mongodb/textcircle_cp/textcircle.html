@@ -1,0 +1,22 @@
+<head>
+  <title>textcircle</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> addname}}
+  {{> hello}}
+</body>
+
+<template name="addname">
+  <form class="save-name-form">
+    First name: <input type="text" name="name"><br>
+    <button type="submit">Salvar nome</button><br>
+  </form>
+</template>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>{{name}}, you've pressed the button {{counter}} times.</p>
+</template>
