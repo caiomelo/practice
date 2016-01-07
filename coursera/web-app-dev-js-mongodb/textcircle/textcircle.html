@@ -3,16 +3,43 @@
 </head>
 
 <body>
-  <h1>Welcome to Text!</h1>
-  {{> date_display}}
-  <br><br><br>
-  {{> editor}}
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TextCicle</a>
+            <p class="navbar-text navbar-right">{{>loginButtons align="right"}}</p>
+        </div> <!-- nav container -->
+    </nav>
+
+    <div class="container top-margin">
+        <div class="row">
+          <div class="col-md-12">
+            {{> editingUsers}}
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-md-6">
+          {{> editor}}
+        </div>
+        <div class="col-md-6">
+          {{> preview}}
+        </div>
+      </div>
+    </div>
 </body>
 
-<template name="date_display">
-  {{current_date}}
+<template name="editor">
+  {{>sharejsCM docid=docid onRender=config id="editor"}}
 </template>
 
-<template name="editor">
-  {{>sharejsCM docid=docid id="editor"}}
+<template name="preview">
+  <iframe id="preview_iframe">
+  </iframe>
+</template>
+
+<template name="editingUsers">
+    Editors:
+    {{#each users}}
+    <span class="label label-info">{{firstname}}</span>
+    {{/each}}
 </template>
