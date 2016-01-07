@@ -50,7 +50,6 @@ if (Meteor.isServer) {
 
 Meteor.methods({
     addEditingUser:function() {
-        //EditingUsers.insert({user:"caio"});
         var user, doc;
         doc = Documents.findOne();
         if(!doc) {return;}
